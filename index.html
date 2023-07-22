@@ -1,20 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Homepage</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>News website</title>
+  </head>
+  <body>
+    <main id="main">
+      <div id="header">
+        <img id="appLogo" src="./assets/images/logo.svg" alt="App logo" />
+        <div id="menuToggler">
+          <img
+            id="menuIcon"
+            src="./assets/images/icon-menu.svg"
+            alt="Menu Icon"
+          />
+        </div>
+      </div>
+      <nav id="menu">
+        <a href="#">Home</a>
+        <a href="#">New</a>
+        <a href="#">Popular</a>
+        <a href="#">Trending</a>
+        <a href="#">Categories</a>
+      </nav>
+      <section>
+        <article id="firstArticle">
+          <img src="./assets/images/image-web-3-mobile.jpg" alt="K" />
+          <h1>The Bright Future of Web 3.0?</h1>
+          <p>
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <button id="readMoreBtn">Read More</button>
+        </article>
+        <article id="secondArticle">
+          <h1>New</h1>
+          <div>
+            <h2>Hydrogen VS Electric Cars</h2>
+            <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+          </div>
+          <hr />
+          <div>
+            <h2>The Downsides of AI Artistry</h2>
+            <p>
+              What are the possible adverse effects of on-demands AI image
+              generation?
+            </p>
+          </div>
+          <hr />
+          <div>
+            <h2>Is VC Funding Drying Up?</h2>
+            <p>
+              Private funding by VC firms is down 50% YOY. We take a look at
+              what that means.
+            </p>
+          </div>
+        </article>
+        <article id="thirdArticle">
+          <div class="thirdArticlePictureAndInfoContainer">
+            <img
+              src="./assets/images/image-retro-pcs.jpg"
+              alt="Reviving Retro PCs"
+            />
+            <div class="thirdArticleInfoContainer">
+              <h2>01</h2>
+              <h3>Reviving Retro PCs</h3>
+              <p>What happens when old PCs are given modern upgrades?</p>
+            </div>
+          </div>
+          <div class="thirdArticlePictureAndInfoContainer">
+            <img
+              src="./assets/images/image-top-laptops.jpg"
+              alt="Top 10 Laptops of 2022"
+            />
+            <div class="thirdArticleInfoContainer">
+              <h2>02</h2>
+              <h3>Top 10 Laptops of 2022</h3>
+              <p>Our best picks for various needs and budgets.</p>
+            </div>
+          </div>
+          <div class="thirdArticlePictureAndInfoContainer">
+            <img
+              src="./assets/images/image-gaming-growth.jpg"
+              alt="The Growth of Gaming"
+            />
+            <div class="thirdArticleInfoContainer">
+              <h2>03</h2>
+              <h3>The Growth of Gaming</h3>
+              <p>How the pandemic has sparked fresh opportunities.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="scripts.js" charset="utf-8"></script>
+  </body>
 </html>
