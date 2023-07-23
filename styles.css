@@ -1,22 +1,23 @@
 body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   transition: 0.5s;
+  z-index: 0;
 }
 
 body.frozen {
   user-select: none;
   overflow: hidden;
   background-color: #807e89;
-  z-index: 0;
+  /* z-index: -1; */
 }
 
 article {
   transition: 0.5s;
-  z-index: -1;
 }
 
 article.dim {
-  /* position: relative; */
+  position: relative;
+  z-index: -1;
   filter: brightness(0.5);
 }
 
@@ -34,9 +35,12 @@ article.dim {
 #menuToggler {
   position: fixed;
   right: 9px;
-  z-index: 1;
+  z-index: 2;
 }
 
+#menuToggler:hover {
+  cursor: pointer;
+}
 nav {
   display: flex;
   flex-direction: column;
@@ -48,6 +52,7 @@ nav {
   top: 0;
   transform: translateX(100vw);
   gap: 2em;
+  z-index: 1;
   /* margin-bottom: 1em; */
 }
 
@@ -60,23 +65,33 @@ nav.open {
   padding-top: 5em;
 }
 
-nav a {
+a {
   padding: 0.5em 0;
   color: hsl(236, 13%, 42%);
   text-decoration: none;
+  /* z-index: 1; */
 }
 
-nav a:hover {
+a:hover {
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+
+#secondArticle a:hover {
   color: hsl(35, 77%, 62%);
 }
+
 section {
   display: flex;
   flex-direction: column;
   gap: 2em;
+  /* z-index: 2; */
 }
-#firstArticle img {
+
+#futureOfWebLogo {
   width: 100%;
 }
+
 h1 {
   font-size: 3rem;
   font-weight: 800;
@@ -99,9 +114,14 @@ p {
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: 700;
+  transition: 0.5s;
   border: 0;
 }
 
+#readMoreBtn:hover {
+  background-color: hsl(240, 100%, 5%);
+  cursor: pointer;
+}
 #secondArticle {
   background-color: hsl(240, 100%, 5%);
   padding: 0.5em 1.5em;
@@ -110,11 +130,13 @@ p {
 
 #secondArticle h1 {
   font-size: 2.5rem;
-  margin-top: 0;
+  margin: 0.5em 0;
   color: hsl(35, 77%, 62%);
 }
 
-#secondArticle h2 {
+#secondArticle a {
+  font-size: 22px;
+  margin-top: 1em;
   color: hsl(36, 100%, 99%);
 }
 
@@ -150,39 +172,147 @@ hr {
   flex-direction: column;
   gap: 0.5em;
 }
-.thirdArticleInfoContainer h2 {
-  color: hsl(233, 8%, 79%);
-  font-size: 2rem;
-  margin: 0;
-}
 
-.thirdArticleInfoContainer h3 {
+.thirdArticleInfoContainer a,
+.thirdArticleInfoContainer h2 {
   color: hsl(240, 100%, 5%);
   font-size: 1.2rem;
   margin: 0;
+}
+
+.thirdArticleInfoContainer h2 {
+  color: hsl(233, 8%, 79%);
+}
+
+.thirdArticleInfoContainer a:hover {
+  color: hsl(5, 85%, 63%);
 }
 
 .thirdArticleInfoContainer p {
   margin: 0;
 }
 
-@media screen and (min-width: 376px) {
+@media screen and (min-width: 1440px) {
+  body {
+    margin: 2em;
+  }
+
   #menuToggler {
     display: none;
   }
 
+  #appLogo {
+    width: 5em;
+  }
+
+  p {
+    font-size: 19px;
+  }
   nav {
-    display: flex;
+    position: relative;
     height: auto;
-    justify-content: space-around;
     flex-direction: row;
     opacity: 1;
     transform: none;
+    justify-content: flex-end;
+    gap: 3em;
   }
 
   nav a {
-    font-size: 1.3em;
-    flex-grow: 0;
+    font-size: 20px;
+  }
+
+  article {
+    display: flex;
+  }
+
+  section {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  #firstArticle {
+    flex-direction: column;
+  }
+
+  /* #futureOfWebLogo {
+    width: 90%;
+  } */
+
+  #firstArticle h1 {
+    font-size: 4.5rem;
+  }
+
+  #firstArticleH1 {
+    width: 30vw;
+  }
+
+  #firstArticleInfoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #firstArticlePBtn {
+    max-width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  #firstArticlePBtn p {
+    padding-top: 2rem;
+  }
+
+  #readMoreBtn {
     font-size: 15px;
+  }
+
+  #secondArticle {
+    flex-direction: column;
+    width: 65%;
+    margin: 0;
+    justify-content: space-between;
+  }
+
+  #secondArticle h1 {
+    font-size: 3rem;
+  }
+
+  #secondArticle a {
+    font-size: 28px;
+  }
+
+  #secondArticle p {
+    font-size: 20px;
+  }
+  #thirdArticle {
+    padding-top: 5em;
+    flex-direction: row;
+  }
+
+  hr {
+    margin: 1em 0;
+  }
+
+  .thirdArticlePictureAndInfoContainer img {
+    object-fit: unset;
+  }
+
+  .thirdArticleInfoContainer {
+    justify-content: space-between;
+  }
+
+  .thirdArticleInfoContainer h2 {
+    font-size: 32px;
+  }
+
+  .thirdArticleInfoContainer a {
+    font-size: 22.5px;
+  }
+
+  .thirdArticleInfoContainer p {
+    font-size: 18px;
   }
 }
