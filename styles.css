@@ -8,7 +8,6 @@ body.frozen {
   user-select: none;
   overflow: hidden;
   background-color: #807e89;
-  /* z-index: -1; */
 }
 
 article {
@@ -41,6 +40,7 @@ article.dim {
 #menuToggler:hover {
   cursor: pointer;
 }
+
 nav {
   display: flex;
   flex-direction: column;
@@ -53,7 +53,6 @@ nav {
   transform: translateX(100vw);
   gap: 2em;
   z-index: 1;
-  /* margin-bottom: 1em; */
 }
 
 nav.open {
@@ -69,7 +68,6 @@ a {
   padding: 0.5em 0;
   color: hsl(236, 13%, 42%);
   text-decoration: none;
-  /* z-index: 1; */
 }
 
 a:hover {
@@ -85,7 +83,6 @@ section {
   display: flex;
   flex-direction: column;
   gap: 2em;
-  /* z-index: 2; */
 }
 
 #futureOfWebLogo {
@@ -126,16 +123,50 @@ p {
   background-color: hsl(240, 100%, 5%);
   padding: 0.5em 1.5em;
   margin: 2em 0;
+  padding-top: 0;
+}
+
+#loader {
+  font-size: 3em;
+  width: 1em;
+  height: 1em;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0.5em;
+  border-color: hsl(35, 77%, 62%) white;
+  border-radius: 50%;
+  position: relative;
+  left: 45%;
+  top: 45vh;
+  opacity: 0;
+  animation: spin 0.5s ease-in-out alternate infinite;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+#loader.waiting {
+  opacity: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
 }
 
 #secondArticle h1 {
   font-size: 2.5rem;
   margin: 0.5em 0;
   color: hsl(35, 77%, 62%);
+  margin-top: 0;
 }
 
 #secondArticle a {
-  font-size: 22px;
+  text-transform: capitalize;
+  font-size: 21px;
   margin-top: 1em;
   color: hsl(36, 100%, 99%);
 }
@@ -143,9 +174,17 @@ p {
 hr {
   margin: 2em 0;
   border: 1px solid hsl(236, 13%, 42%);
+  opacity: 1;
+}
+
+hr.waiting {
+  opacity: 0;
 }
 
 #secondArticle p {
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
   color: hsl(240, 3%, 60%);
 }
 
@@ -155,6 +194,7 @@ hr {
   gap: 2em;
   padding-bottom: 2em;
 }
+
 .thirdArticlePictureAndInfoContainer {
   display: flex;
   gap: 1.5em;
@@ -170,7 +210,6 @@ hr {
 .thirdArticleInfoContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
 }
 
 .thirdArticleInfoContainer a,
@@ -181,6 +220,7 @@ hr {
 }
 
 .thirdArticleInfoContainer h2 {
+  font-size: 28px;
   color: hsl(233, 8%, 79%);
 }
 
@@ -206,8 +246,9 @@ hr {
   }
 
   p {
-    font-size: 19px;
+    font-size: 23px;
   }
+
   nav {
     position: relative;
     height: auto;
@@ -219,7 +260,7 @@ hr {
   }
 
   nav a {
-    font-size: 20px;
+    font-size: 28px;
   }
 
   article {
@@ -230,16 +271,13 @@ hr {
     flex-direction: row;
     flex-wrap: nowrap;
   }
+
   #firstArticle {
     flex-direction: column;
   }
 
-  /* #futureOfWebLogo {
-    width: 90%;
-  } */
-
   #firstArticle h1 {
-    font-size: 4.5rem;
+    font-size: 5rem;
   }
 
   #firstArticleH1 {
@@ -266,7 +304,7 @@ hr {
   }
 
   #readMoreBtn {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   #secondArticle {
@@ -281,11 +319,11 @@ hr {
   }
 
   #secondArticle a {
-    font-size: 28px;
+    font-size: 36px;
   }
 
   #secondArticle p {
-    font-size: 20px;
+    font-size: 26px;
   }
   #thirdArticle {
     padding-top: 5em;
@@ -305,14 +343,14 @@ hr {
   }
 
   .thirdArticleInfoContainer h2 {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .thirdArticleInfoContainer a {
-    font-size: 22.5px;
+    font-size: 28px;
   }
 
   .thirdArticleInfoContainer p {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
